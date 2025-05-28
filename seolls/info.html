@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Info Input - Resumate</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+    footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+
+    .form-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .box {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      width: 280px;
+    }
+
+    .box h3 {
+      font-size: 18px;
+      margin-bottom: 1rem;
+      color: black;
+    }
+
+    .box input,
+    .box textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .button {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Resumate</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="info.html">Resume</a>
+      <a href="selfintroinput.html">Personal Statement</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Enter Your Resume Information</h2>
+
+    <form id="resumeForm">
+      <div class="form-container">
+        <!-- Personal Info -->
+        <div class="box">
+          <h3>Personal Information</h3>
+          <input type="text" id="name" placeholder="Full Name" required />
+          <input type="text" id="title" placeholder="Job Title" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="text" id="phone" placeholder="Phone Number" />
+          <input type="text" id="location" placeholder="Location" />
+         
+        </div>
+
+        <!-- Education & Profile -->
+        <div class="box">
+          <h3>Education & Profile</h3>
+          <input type="text" id="education" placeholder="Education" />
+          <textarea id="profile" placeholder="Profile Summary" rows="3"></textarea>
+          <textarea id="objective" placeholder="Career Objective" rows="3"></textarea>
+        </div>
+
+        <!-- Experience & Skills -->
+        <div class="box">
+          <h3>Experience, Skills & More</h3>
+          <textarea id="experience" placeholder="Work Experience" rows="4"></textarea>
+          <textarea id="skills" placeholder="Skills" rows="2"></textarea>
+          <input type="text" id="languages" placeholder="Languages" />
+          <input type="text" id="hobbies" placeholder="Hobbies" />
+        </div>
+      </div>
+
+      <button class="button" type="submit">Preview Resume</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('resumeForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById('name').value,
+        title: document.getElementById('title').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        location: document.getElementById('location').value,
+        education: document.getElementById('education').value,
+        profile: document.getElementById('profile').value,
+        objective: document.getElementById('objective').value,
+        experience: document.getElementById('experience').value,
+        skills: document.getElementById('skills').value,
+        languages: document.getElementById('languages').value,
+        hobbies: document.getElementById('hobbies').value
+      };
+
+      localStorage.setItem('resumeData', JSON.stringify(data));
+      window.location.href = 'preview.html';
+    });
+  </script>
+
+<footer>
+    <p>&copy; 2025 Resumate. All rights reserved.</p>
+  </footer>
+</body>
+</html>

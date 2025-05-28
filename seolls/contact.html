@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Resumate</title>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #2c3e50;
+      --bg: #f4f4f4;
+      --text: #333;
+      --white: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .main {
+      display: flex;
+      max-width: 1000px;
+      margin: 60px auto;
+      gap: 2rem;
+      padding: 0 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .form-box, .info-box {
+      background-color: var(--white);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      flex: 1;
+      min-width: 280px;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    p.description {
+      color: #2c3e50;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    input, textarea {
+      padding: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: var(--accent);
+      color: var(--white);
+      padding: 0.9rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: gray;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .info-item {
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .info-item strong {
+      display: block;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Resumate</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="info.html">Resume</a>
+      <a href="selfintroinput.html">Personal Statement</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <!-- Contact Form Section -->
+    <div class="form-box">
+      <h2>Get in Touch</h2>
+      <p class="description">We’d love to hear from you. Use the form below to send us a message.</p>
+      <form onsubmit="event.preventDefault(); alert('Thank you! We’ll be in touch.')">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email address" required />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Company Info Section -->
+    <div class="info-box">
+      <h3>Contact Information</h3>
+      <div class="info-item">
+        <strong>Address</strong>
+        123 Resumate Avenue<br>
+        Innovation City, 45678<br>
+        Countryland
+      </div>
+      <div class="info-item">
+        <strong>Email</strong>
+        support@resumate.app
+      </div>
+      <div class="info-item">
+        <strong>Phone</strong>
+        +1 (234) 567-8900
+      </div>
+      <div class="info-item">
+        <strong>Hours</strong>
+        Mon – Fri: 9:00 AM – 6:00 PM
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Resumate. All rights reserved.</p>
+  </footer>
+</body>
+</html>
